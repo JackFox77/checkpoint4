@@ -6,10 +6,14 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = []
 /** @type {import('./Models/Quote').Quote[]} */
-  quote = []
+  quote = {}
+/** @type {import('./Models/Image').Image[]} */
   image = []
-  todos = {}
+/** @type {import('./Models/ToDo').ToDo[]} */
+  todos = []
+
   checkedtodos = []
+
   weather={}
 }
 

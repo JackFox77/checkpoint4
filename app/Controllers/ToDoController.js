@@ -7,6 +7,7 @@ import { Pop } from "../Utils/Pop.js";
 
 function _drawToDo() {
     let template = ''
+    console.log('todo')
     ProxyState.todos.forEach(t => template += t.Template)
     document.getElementById('todo').innerHTML=template
     
@@ -20,8 +21,8 @@ export class TodoController{
         // window.event.preventDefault()
         this.getTodo()
     }
-    addTodo(text) {
-           
+    addTodo(id) {
+    window.event.preventDefault()
     console.log('creating todo');
     let form = window.event.target
     let newTodo = {
@@ -41,14 +42,14 @@ export class TodoController{
     Pop.error(error)
 }
     }
-    // async deleteTodo(todoId) {
-    //     try {
-    //         await toDoService.deleteTodo(todoId)
-    //     } catch (error) {
-    //         console.error('[delete todo]', error)
-    //         Pop.error(error)
-    //     }
-    // }
+    async deleteTodo(id) {
+        try {
+            await toDoService.deleteTodo(id)
+        } catch (error) {
+            console.error('[delete todo]', error)
+            Pop.error(error)
+        }
+    }
 }
 
 

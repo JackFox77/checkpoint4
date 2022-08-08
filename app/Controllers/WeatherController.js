@@ -6,11 +6,8 @@ import { Pop } from "../Utils/Pop.js";
 function _drawWeather() {
     let weather = ProxyState.weather
     console.log(weather)
-    if (!weather) {
-        return
-    }
-    document.getElementById('weather').textContent = `${weather.main}`
-    console.log(weather.main)
+    document.getElementById('weather').textContent = weather
+    console.log(weather)
 }
 
 
@@ -20,6 +17,7 @@ export class WeatherController{
     constructor() {
         console.log('WeatherController Loaded')
         _drawWeather()
+        ProxyState.on('weather', _drawWeather)
     }
     async getWeather() {
         try {

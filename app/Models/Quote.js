@@ -13,7 +13,7 @@ export class Quote{
         </section>
         <section>
         <div class="on-hover">${this.author}</div>
-        <i class="mdi mdi-magnify f-18 me-2"></i>
+        
         </section>
         `
     }
