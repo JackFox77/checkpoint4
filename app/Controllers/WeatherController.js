@@ -9,8 +9,8 @@ function _drawWeather() {
     if (!weather) {
         return
     }
-    document.getElementById('weather').textContent = `${weather}`
-    console.log(weather.temp)
+    document.getElementById('weather').textContent = `${weather.main}`
+    console.log(weather.main)
 }
 
 

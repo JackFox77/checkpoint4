@@ -7,7 +7,7 @@ export class Weather{
     }
     get WeatherTemplate() {
         return `
-        <div class="bg-secondary col-3">${this}</div>
+        <div class="bg-secondary col-3">${this.data}</div>
         `
     }
 }

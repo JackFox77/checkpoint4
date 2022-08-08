@@ -8,7 +8,13 @@ export class Quote{
 
     get QuoteTemplate() {
         return `
-        <div class="bg-secondary col-6">${this.content} | ${this.author}</div>
+        <section class="bg-secondary col-6"
+        <div class="">${this.content}</div>
+        </section>
+        <section>
+        <div class="on-hover">${this.author}</div>
+        <i class="mdi mdi-magnify f-18 me-2"></i>
+        </section>
         `
     }
 }

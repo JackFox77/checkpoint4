@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { Quote } from "../Models/Quote.js";
 import { quoteService } from "../Services/QuoteService.js";
 import { Pop } from "../Utils/Pop.js";
 
@@ -9,7 +10,9 @@ function _drawQuote() {
     if (!quote) {
         return
     }
-    document.getElementById('quote').textContent =  `${quote.content} | ${quote.author}`
+    document.getElementById('quote').innerHTML = `${quote.content} ` 
+    document.getElementById('author').innerHTML = `${quote.author}`
+    // document.getElementById('quote').innerHTML= QuoteTemplate
 }
 
 export class QuoteController{

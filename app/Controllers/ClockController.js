@@ -3,7 +3,7 @@ import { sandboxApi } from "../Services/AxiosService.js";
 
 function time() {
         const date = new Date()
-    console.log(date)
+    // console.log(date)
     document.getElementById('clock').textContent = `${date}`
 }
     

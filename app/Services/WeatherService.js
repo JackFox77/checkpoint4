@@ -6,7 +6,7 @@ class WeatherService{
     async getWeather() {
         const res = await sandboxApi.get('/weather')
         ProxyState.weather = new Weather(res.data)
-        console.log(res.data)
+        console.log(res.data, 'weather service')
     }
 }
 
