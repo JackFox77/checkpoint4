@@ -12,12 +12,12 @@ function _drawToDo() {
     document.getElementById('todo').innerHTML = template
     document.getElementById('completed').innerHTML = `
     <div class="">
-        <div class="d-flex justify-content-between"
+        <div
             <div>
-            <b>Todos</b>${ProxyState.todos.length}
+            <b>Todos -</b>${ProxyState.todos.length}
             </div>
             <div>
-            <b>Finished</b>   ${ProxyState.todos.filter(t => t.completed).length}
+            <b>Finished -</b>   ${ProxyState.todos.filter(t => t.completed).length}
         </div>
     </div>
     `

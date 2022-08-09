@@ -12,7 +12,7 @@ export class ToDo{
     get Template() {
         // NOTE                                                                                VVVV Remember to pass down your id. Don't forget the quotes around it
         return `
-        <div class="no-select"> ${this.description} <span onclick="app.todoController.deleteTodo('${this.id}')" class="no-select">| X </span></div>
+        <div class="no-select"> ${this.description} |<span onclick="app.todoController.deleteTodo('${this.id}')" class="no-select text-danger"> x </span></div>
         <input type="checkbox" ${this.completed ? 'checked': ''} onclick="app.todoController.toggletodo('${this.id}')">
         `
     }
