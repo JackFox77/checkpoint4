@@ -69,15 +69,18 @@
         </div>
       </section>
 
-      <div class="col-3 bg-secondary opacity-75" id="">todo</div>
+      <div class="col-3 bg-secondary opacity-75" id="">
+        todo <span id="completed"></span><span id="incompleted"></span>
+      </div>
       <div class="col-3 bg-secondary opacity-75" id="todo">placeholder</div>
       <form class="col-3" id="form" onsubmit="app.todoController.addTodo()">
         <div class="mb-3">
           <label for="name" class="form-label"></label>
 
           <input
-            name="name"
-            id="name"
+            name="description"
+            id="description"
+            for="description"
             type="text"
             minlength="4"
             required

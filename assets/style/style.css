@@ -8,3 +8,9 @@
   display: block;
   color: red;
 }
+
+body {
+  background-size: cover;
+}
+
+/* NOTE write some css to make sure that your background size covers the screen */

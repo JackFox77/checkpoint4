@@ -9,9 +9,42 @@ function _drawToDo() {
     let template = ''
     console.log('todo')
     ProxyState.todos.forEach(t => template += t.Template)
-    document.getElementById('todo').innerHTML=template
+    document.getElementById('todo').innerHTML = template
+    document.getElementById('completed').innerHTML = `
+    <div class="">
+        <div class="d-flex justify-content-between"
+            <div>
+            <b>Todos</b>${ProxyState.todos.length}
+            </div>
+            <div>
+            <b>Finished</b>   ${ProxyState.todos.filter(t => t.completed).length}
+        </div>
+    </div>
+    `
     
 }
+
+
+// function _draw() {
+
+//   let template = ''
+//   ProxyState.sandboxSpells.forEach(s => template += s.ListTemplate)
+//   // @ts-ignore
+//   document.getElementById('sandbox-spells').innerHTML = template
+//   // @ts-ignore
+//   document.getElementById('known-spells').innerHTML = `
+//   <div class="text-white">
+//     <div class="d-flex justify-content-between">
+//       <div>
+//        <b>Known Spells:</b> ${ProxyState.sandboxSpells.length}
+//       </div>
+//        <div>
+//           <b>Prepared Spells:</b> ${ProxyState.sandboxSpells.filter(s => s.prepared).length}
+//       </div>
+//     </div>
+//   </div>
+//   `
+// }
 
 
 export class TodoController{
@@ -26,7 +59,7 @@ export class TodoController{
     console.log('creating todo');
     let form = window.event.target
     let newTodo = {
-      name: form.name.value,
+      description: form.description.value,
       
         }
         window.event.preventDefault()
@@ -44,9 +77,22 @@ export class TodoController{
     }
     async deleteTodo(id) {
         try {
+            const yes = await Pop.confirm('Delete Todo')
+            if (!yes){return}
+
             await toDoService.deleteTodo(id)
         } catch (error) {
             console.error('[delete todo]', error)
+            Pop.error(error)
+        }
+    }
+    async toggletodo(todoId) {
+        try {
+            
+            
+            await toDoService.toggleTodo(todoId)
+        } catch (error) {
+            console.error('[toggle todo]', error)
             Pop.error(error)
         }
     }
